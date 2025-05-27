@@ -40,7 +40,8 @@ const LoadingSplash = () => {
   //  return () => task.cancel();
 
   const timer = setTimeout(()=> {
-    router.replace('/screen/auth/authenticationScreen')
+    // router.replace('/screen/auth/authenticationScreen')
+    router.replace('/(drawer)/(tab)')
     return ()=> timer
   }, 1000)
  }, []);

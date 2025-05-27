@@ -7,18 +7,10 @@ module.exports = {
     theme: {
       extend: {
         fontFamily: {
-          AvenirLTProBlack: 'AvenirLTProBlack',
-          AvenirLTProBlackOblique: 'AvenirLTProBlackOblique',
-          AvenirLTProBook: 'AvenirLTProBook',
-          AvenirLTProBookOblique: 'AvenirLTProBookOblique',
-          AvenirLTProHeavy: 'AvenirLTProHeavy',
-          AvenirLTProHeavyOblique: 'AvenirLTProHeavyOblique',
-          AvenirLTProLight: 'AvenirLTProLight',
-          AvenirLTProLight: 'AvenirLTProLight',
-          AvenirLTProMedium: 'AvenirLTProMedium',
-          AvenirLTProMediumOblique: 'AvenirLTProMediumOblique',
-          AvenirLTProOblique: 'AvenirLTProOblique',
-          AvenirLTProRoman: 'AvenirLTProRoman'
+          // Roboto
+          RoboNormal: 'Roboto-Regular',
+          RoboMedium: 'Roboto-Medium',
+          RoboBold: 'Roboto-Bold',
         },
   
         colors: {
