@@ -162,83 +162,108 @@
 
 
 
-// import { IconDrawer } from '@/src/assets/icon/icon'
-// import tw from '@/src/lib/tailwind'
-// // import { useNavigation, DrawerActions } from 'expo-router'
-// import { DrawerActions, useNavigation } from '@react-navigation/native'
-// import { Image } from 'expo-image'
-// import { StatusBar } from 'expo-status-bar'
-// import React from 'react'
-// import { StyleSheet, Text, TouchableOpacity, View } from 'react-native'
-// import { SvgXml } from 'react-native-svg'
+import { IconDrawer } from '@/src/assets/icon/icon'
+import TButton from '@/src/components/TButton'
+import tw from '@/src/lib/tailwind'
+// import { useNavigation, DrawerActions } from 'expo-router'
+import { DrawerActions, useNavigation } from '@react-navigation/native'
+import { Image } from 'expo-image'
+import { router } from 'expo-router'
+import { StatusBar } from 'expo-status-bar'
+import React from 'react'
+import { StyleSheet, Text, TouchableOpacity, View } from 'react-native'
+import { SvgXml } from 'react-native-svg'
 
 
-// type Props = {}
+type Props = {}
 
-// const index = (props: Props) => {
-//   const navigation = useNavigation();
-//   return (
-//     <View style={tw`flex-1 bg-white p-[4%]`}>
-//      <View style={tw`flex-row justify-between`}>
-//      <TouchableOpacity
-//         onPress={() => navigation?.dispatch(DrawerActions.openDrawer())}
-//         style={tw`mt-6`}>
-//         <SvgXml color={"white"} xml={IconDrawer} />
-
-//       </TouchableOpacity>
-//       <View style={tw` mt-6 items-center`}>
-//         <Image style={tw`w-[77px]  h-[103px]`} source={require('../../../assets/images/logo.png')} />
-//         <Text style={tw`text-black font-RoboBold font-bold py-6 text-3xl`}>Hi Jason 👋</Text>
-//       </View>
-//       <View style={tw``}>
-     
-//       </View>
-//      </View>
-//       {/* <Text>index</Text> */}
-//       <View style={tw`flex-row gap-2 rounded-2xl my-12`}>
-//         <View style={tw`w-[50%] h-24 rounded-xl bg-[#9c2f2f96] border-[#FFFFFF80] shadow-black drop-shadow-4xl`}>
-//           <Text>dffedf</Text>
-//         </View>
-//         <View style={tw`w-[50%] h-24 border rounded-xl`}></View>
-//       </View>
-//       <StatusBar backgroundColor='black' translucent={false} />
-//     </View>
-//   )
-// }
-
-// export default index
-
-// const styles = StyleSheet.create({})
-
-import tw from '@/src/lib/tailwind'; // Adjust this if you're using nativewind or twrnc
-import React from 'react';
-import { Text, View } from 'react-native';
-
-const index = () => {
+const index = (props: Props) => {
+  const navigation = useNavigation();
   return (
-    <View style={tw`flex-1 items-center justify-center bg-white`}>
-      {/* Top Row */}
-      <View style={tw`flex-row mb-4`}>
-        {/* Card 1 */}
-        <View style={tw`bg-white border border-blue-500 rounded-xl p-4 mr-2 w-40 shadow-sm`}>
-          <Text style={tw`text-center text-gray-500 text-sm`}>Today's Payment Account</Text>
-          <Text style={tw`text-center text-black text-2xl font-bold`}>$100</Text>
-        </View>
+    <View style={tw`flex-1 bg-white p-[4%] `}>
+      <View style={tw`flex-col  justify-between h-full`}>
+        <View>
+          <View style={tw`flex-row justify-between`}>
+            <TouchableOpacity
+              onPress={() => navigation?.dispatch(DrawerActions.openDrawer())}
+              style={tw`mt-6`}>
+              <SvgXml color={"white"} xml={IconDrawer} />
 
-        {/* Card 2 */}
-        <View style={tw`bg-white rounded-xl p-4 ml-2 w-40 shadow-sm`}>
-          <Text style={tw`text-center text-gray-500 text-sm`}>Last Payment Amount</Text>
-          <Text style={tw`text-center text-black text-2xl font-bold`}>$50</Text>
+            </TouchableOpacity>
+            <View style={tw` mt-24 items-center`}>
+              <Image style={tw`w-[77px]  h-[103px]`} source={require('../../../assets/images/logo.png')} />
+              <Text style={tw`text-black font-RoboBold font-bold py-6 text-3xl`}>Hi Jason 👋</Text>
+            </View>
+            <View style={tw``}>
+
+            </View>
+          </View>
+          {/* <Text>index</Text> */}
+          <View style={tw`mt-12 items-center justify-center bg-white`}>
+            {/* Top Row */}
+            <View style={tw`flex-row mb-4`}>
+              {/* Card 1 */}
+              <View style={tw`bg-white rounded-xl p-4 mr-2 w-40 shadow-lg`}>
+                <Text style={tw`text-center text-gray-500 text-sm`}>Today's Payment Account</Text>
+                <Text style={tw`text-center text-black text-2xl font-bold`}>$100</Text>
+              </View>
+
+              {/* Card 2 */}
+              <View style={tw`bg-white rounded-xl p-4 ml-2 w-40 shadow-lg`}>
+                <Text style={tw`text-center text-gray-500 text-sm`}>Last Payment Amount</Text>
+                <Text style={tw`text-center text-black text-2xl font-bold`}>$50</Text>
+              </View>
+            </View>
+
+            {/* Bottom Card */}
+            <View style={tw`bg-white rounded-xl p-4 w-40 shadow-lg`}>
+              <Text style={tw`text-center text-gray-500 text-sm`}>Total Payments{'\n'}This Month</Text>
+              <Text style={tw`text-center text-black text-2xl font-bold`}>$15,000</Text>
+            </View>
+          </View>
+        </View>
+        <View>
+          <TButton onPress={()=> router.push('/screen/tapToPay/TapToPay')} containerStyle={tw`bg-black w-full`} title='Tab to pay' />
         </View>
       </View>
-
-      {/* Bottom Card */}
-      <View style={tw`bg-white rounded-xl p-4 w-64 shadow-sm`}>
-        <Text style={tw`text-center text-gray-500 text-sm`}>Total Payments{'\n'}This Month</Text>
-        <Text style={tw`text-center text-black text-2xl font-bold`}>$15,000</Text>
-      </View>
+      <StatusBar backgroundColor='black' translucent={false} />
     </View>
-  );
-};
+  )
+}
 
-export default index;
+export default index
+
+const styles = StyleSheet.create({})
+
+// import tw from '@/src/lib/tailwind'; // Adjust this if you're using nativewind or twrnc
+// import React from 'react';
+// import { Text, View } from 'react-native';
+
+// const index = () => {
+//   return (
+//     <View style={tw`flex-1 items-center justify-center bg-white`}>
+//       {/* Top Row */}
+//       <View style={tw`flex-row mb-4`}>
+//         {/* Card 1 */}
+//         <View style={tw`bg-white border border-blue-500 rounded-xl p-4 mr-2 w-40 shadow-sm`}>
+//           <Text style={tw`text-center text-gray-500 text-sm`}>Today's Payment Account</Text>
+//           <Text style={tw`text-center text-black text-2xl font-bold`}>$100</Text>
+//         </View>
+
+//         {/* Card 2 */}
+//         <View style={tw`bg-white rounded-xl p-4 ml-2 w-40 shadow-sm`}>
+//           <Text style={tw`text-center text-gray-500 text-sm`}>Last Payment Amount</Text>
+//           <Text style={tw`text-center text-black text-2xl font-bold`}>$50</Text>
+//         </View>
+//       </View>
+
+//       {/* Bottom Card */}
+//       <View style={tw`bg-white rounded-xl p-4 w-64 shadow-sm`}>
+//         <Text style={tw`text-center text-gray-500 text-sm`}>Total Payments{'\n'}This Month</Text>
+//         <Text style={tw`text-center text-black text-2xl font-bold`}>$15,000</Text>
+//       </View>
+//     </View>
+//   );
+// };
+
+// export default index;

@@ -14,6 +14,7 @@ const Layout = () => {
           backgroundColor: '#141316',
           borderTopWidth: 0,
           elevation: 0,
+        
         },
         tabBarItemStyle: {
           justifyContent: 'center',
@@ -97,9 +98,9 @@ export default Layout;
 const styles = StyleSheet.create({
   iconWrapper: {
     width: 50,
-    height: 50,
+    // height: 50,
     justifyContent: 'center',
     alignItems: 'center',
-    marginTop: 20
+    marginTop: 10
   },
 });

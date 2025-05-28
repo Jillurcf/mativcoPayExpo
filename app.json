@@ -12,6 +12,7 @@
       "supportsTablet": true,
       "bundleIdentifier": "com.anonymous.mativecoPay"
     },
+   
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
@@ -37,6 +38,7 @@
         }
       ],
       "expo-web-browser"
+      
     ],
     "experiments": {
       "typedRoutes": true
