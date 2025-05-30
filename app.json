@@ -10,9 +10,15 @@
     "newArchEnabled": true,
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.anonymous.mativecoPay"
+      "bundleIdentifier": "com.anonymous.mativecoPay",
+      "NSAppTransportSecurity": {
+        "NSAllowsArbitraryLoads": true
+      },    
+      "infoPlist": {
+        "CFBundleAllowMixedLocalizations": true,
+        "CFBundleLocalizations": ["fr"]
+      }
     },
-   
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
@@ -27,7 +33,9 @@
       "favicon": "./assets/images/favicon.png"
     },
     "plugins": [
+      
       "expo-router",
+     
       [
         "expo-splash-screen",
         {
@@ -37,6 +45,14 @@
           "backgroundColor": "#ffffff"
         }
       ],
+      [
+        "@stripe/stripe-react-native",
+        {
+          "merchantIdentifier": "marchant.com",
+          "enableGooglePay": true
+        }
+      ],
+      ["expo-build-properties", {"android": {"usesCleartextTraffic": true},"ios": {}}],
       "expo-web-browser"
       
     ],

@@ -168,7 +168,7 @@ import tw from '@/src/lib/tailwind'
 // import { useNavigation, DrawerActions } from 'expo-router'
 import { DrawerActions, useNavigation } from '@react-navigation/native'
 import { Image } from 'expo-image'
-import { router } from 'expo-router'
+import { router, useLocalSearchParams } from 'expo-router'
 import { StatusBar } from 'expo-status-bar'
 import React from 'react'
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native'
@@ -179,6 +179,7 @@ type Props = {}
 
 const index = (props: Props) => {
   const navigation = useNavigation();
+   const { id } = useLocalSearchParams();
   return (
     <View style={tw`flex-1 bg-white p-[4%] `}>
       <View style={tw`flex-col  justify-between h-full`}>
@@ -223,7 +224,12 @@ const index = (props: Props) => {
           </View>
         </View>
         <View>
-          <TButton onPress={()=> router.push('/screen/tapToPay/TapToPay')} containerStyle={tw`bg-black w-full`} title='Tab to pay' />
+          <TButton onPress={()=> router.push({
+            pathname: '/screen/tapToPay/TapToPay',
+            params: {
+              id: id
+            }
+          })} containerStyle={tw`bg-black w-full`} title='Tab to pay' />
         </View>
       </View>
       <StatusBar backgroundColor='black' translucent={false} />

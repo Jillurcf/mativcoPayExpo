@@ -101,12 +101,15 @@ console.log(code, "code+++++++=")
             });
 
             const data = await res.json();
-            console.log('🎉 Full backend response:', data);
+            console.log('🎉 Full backend response:', data?.user?.stripe_account_id);
 
             if (data?.token) {
                 setCode(data.token);
                 setShowWebView(false);
-               router.replace('/(drawer)/(tab)');
+               router.replace({
+                pathname: '/(drawer)/(tab)',
+                params: {id: data?.user?.stripe_account_id}
+               } );
             } else {
                 console.error('❌ Token not found in response');
             }

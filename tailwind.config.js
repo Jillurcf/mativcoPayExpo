@@ -42,6 +42,12 @@ module.exports = {
     './src/**/*.{js,jsx,ts,tsx}',
   ],
   theme: {
+    screens: {
+      sm: '300px',
+      md: '400px',
+      lg: '880px',
+      tablet: '1024px',
+    },
     extend: {
       fontFamily: {
      
