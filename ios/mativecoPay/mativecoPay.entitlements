@@ -5,6 +5,7 @@
     <key>com.apple.developer.in-app-payments</key>
     <array>
       <string>your.merchant.identifier</string>
+      <string>marchant.com</string>
     </array>
   </dict>
 </plist>
